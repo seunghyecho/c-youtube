@@ -1,0 +1,89 @@
+@charset 'utf-8';
+
+$tablet : 768px;
+$web : 1200px;
+
+:root{
+    --white-color : #ffffff;
+    --black-color : #140a00;
+    --blue-color : #045fd4;
+    --red-color : #ff0000;
+    --grey-dark-color : #909090;
+    --grey-light-color : #c0c0c0;
+
+    --padding: 12px;
+    --avatar-size: 36px;
+
+    --font-large: 18px;
+    --font-medium: 14px;
+    --font-small: 12px;
+    --font-micro: 10px;
+
+    --font-bold: 600;
+    --font-normal: 400;
+
+}
+
+//reset
+* {margin:0; padding:0; box-sizing: border-box;}
+body{font-family: 'Roboto', sans-serif;}
+ul,ol,li {list-style:none;}
+a {text-decoration:none; color:var(--grey-dark-color);}
+img{width: 100%;}
+button, 
+button:focus{border:none; cursor: pointer; all: unset; outline: none;}
+input,
+input:focus{border: none;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    outline: none;
+}
+h1{display: none;}
+
+// html,body
+html,
+body{
+    overflow: visible;
+    &.on{
+        overflow: hidden;
+    }
+}
+
+
+//sub common layout
+#content {
+    width:100%;
+
+    .inner {
+        width: 100%; 
+    }
+}
+
+//tablet
+@media screen and (min-width:$tablet){
+    
+}
+//cellphone
+@media screen and (min-width:$web){
+    
+}
+
+
+//main
+@import 'main/header/header';
+@import 'main/intro/intro';
+@import 'main/footer/footer';
+
+
+//sub common
+
+
+
+//sub page
+@import 'sub/department/department';
+@import 'sub/community/community';
+@import 'sub/member/member';
+
+

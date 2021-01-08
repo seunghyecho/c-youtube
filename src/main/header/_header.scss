@@ -1,0 +1,305 @@
+
+//cellphone
+#settingLayout{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9;
+   
+    .wrap{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background-color: var(--white-color);
+
+      ul{
+
+        li{
+            text-align: center;
+
+            a{
+                padding: var(--padding);
+                display: block;
+                color: var(--black-color);
+                font-size: var(--font-normal);
+            }
+
+            &:hover{
+                background-color: var(--grey-dark-color);
+
+                a{
+                    color: var(--red-color);
+                }
+            }
+
+        }
+      }
+    }
+}
+#searchLayout{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9;
+
+    button{
+        padding: var(--padding);
+        cursor: pointer;
+    }
+    
+    .wrap{
+        display: flex;
+        height: 43px;
+        background-color: var(--white-color);
+
+        .searchBox{
+            display: flex;
+            width: 100%;
+            height: 30px;
+
+            input{
+                margin: 7px auto;
+                height: 100%;
+                border-bottom: 1px solid var(--grey-light-color);
+                
+                &:focus{
+                    border-bottom: 1px solid var(--blue-color);
+                }
+            }
+        }
+
+
+        
+       
+    }
+}
+#menuList{
+    background-color: var(--black-color);
+    text-align: center;
+    display: none;
+
+    li{
+        height: 40px;
+        line-height: 40px;
+
+        &:hover{
+            background-color: var(--grey-dark-color);
+            a{
+                color: var(--red-color);
+            }
+        }
+        
+        &.link{
+            display: flex;
+            justify-content: center;
+            a{
+                margin: 0 3px;
+            }
+        }
+    }
+    a{
+        color: var(--white-color);
+        font-size: var(--font-small);
+    }
+    
+
+}
+#header{
+    position: relative;
+    padding: var(--padding);
+    background-color: var(--black-color);
+    color: var(--white-color);
+
+    .inner{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        
+        .center,
+        .end{
+            display: none;
+        }
+        
+
+        .menuAndLogo{
+            display: flex;
+        }
+
+        .logo{
+            margin-left: 12px;
+            font-size: var(--font-large);
+
+            i{
+                color: var(--red-color);
+            }
+
+            span{
+                color: var(--white-color);
+                font-weight: var(--font-bold);
+            }
+        }
+
+        .icons{
+            height: 100%;
+
+            a{
+                padding: var(--padding);
+                color: var(--white-color);
+                
+                &:last-child{
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+}
+
+//tablet
+@media screen and (min-width:$tablet){
+    #header{
+        .inner{
+            width: 100%;
+            .center{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex: 0 1 728px;
+
+                form.searchForm{
+                    display: flex;
+                    flex-direction: row;
+                    width: 100%;
+                    height: 24px;
+
+                    .formWrap{
+                        position: relative;
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        background-color: rgba(255,255,255,0.05);
+
+
+                        .keyboardBtn{
+                            margin-right: 6px;
+                            position: absolute;
+                            right: 0;
+                        }
+                    }
+
+                    input{
+                        background-color: transparent;
+                        color: var(--white-color);
+                        &:focus{
+                            outline: 1px solid var(--blue-color);
+                        }
+                    }
+
+                    .searchBtn{
+                        width: 65px;
+                        text-align: center;
+                        background-color: rgba(255, 255, 255, 0.08);
+                        color: var(--grey-dark-color);
+                        cursor: pointer;
+
+                        &:hover{
+                            color: var(--grey-light-color);
+                        }
+
+                        // 검색 tooltip
+                        &[data-tooltip-text]:hover {
+                            position: relative;
+                        }
+                        &[data-tooltip-text]:hover:after {
+                            width: max-content;
+                            padding: var(--padding);
+                            content: attr(data-tooltip-text);
+                            position: absolute;
+                            top: 45px;
+                            left: 0;
+                            background-color: var(--grey-dark-color);
+                            color: var(--white-color);
+                            font-size: 12px;
+                        
+                            z-index: 9999;
+                        }
+                    }
+                }
+                .voice{
+                    .voiceBtn{
+                        padding: 0 20px;
+                        cursor: pointer;
+
+                        // 음성으로 검색 tooltip
+                        &[data-tooltip-text]:hover {
+                            position: relative;
+                        }
+                        &[data-tooltip-text]:hover:after {
+                            width: max-content;
+                            padding: var(--padding);
+                            content: attr(data-tooltip-text);
+                            position: absolute;
+                            top: 45px;
+                            left: 0;
+                            background-color: var(--grey-dark-color);
+                            color: var(--white-color);
+                            font-size: 12px;
+                        
+                            z-index: 9999;
+                        }
+
+                    }
+                }
+            }
+            .end{
+                display: block;
+
+                ul{
+                    display: flex;
+                    li{
+                         // 음성으로 검색 tooltip
+                         &[data-tooltip-text]:hover {
+                            position: relative;
+                        }
+                        &[data-tooltip-text]:hover:after {
+                            width: max-content;
+                            padding: var(--padding);
+                            content: attr(data-tooltip-text);
+                            position: absolute;
+                            top: 45px;
+                            left: 0;
+                            background-color: var(--grey-dark-color);
+                            color: var(--white-color);
+                            font-size: 12px;
+                        
+                            z-index: 9999;
+                        }
+                    }
+                }
+                a{
+                    padding: var(--padding);
+                    color: var(--white-color);
+                    font-size: var(--font-normal);
+                }
+            }
+            .icons{
+                display: none;
+            }
+        }
+    }
+    
+}
+
+
+
+

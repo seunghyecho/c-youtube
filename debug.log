@@ -1,0 +1,3 @@
+[0105/150227.508:ERROR:directory_reader_win.cc(43)] FindFirstFile: 지정된 경로를 찾을 수 없습니다. (0x3)
+[0105/150227.518:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\seunghye\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\286fb853-b281-406c-b83d-c9b443e4f959: 지정된 경로를 찾을 수 없습니다. (0x3)
+[0105/154329.213:ERROR:directory_reader_win.cc(43)] FindFirstFile: 지정된 경로를 찾을 수 없습니다. (0x3)
