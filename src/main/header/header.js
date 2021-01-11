@@ -53,21 +53,21 @@ $(function(){
             $(".upNext ul.items").append(
                 $('<li class="item">').append(
                     $('<a href="#">').append(
-                            $('<div class="video">').append("<img src='" + thumb + "'/>"),
-                            $('<div class="info">').append(
-                                $('<div class="avatar">').append('<img src="img/avatar.jpg" alt="avatar">'),
-                                $('<div class="titleBtn">').append(
-                                    $('<div class="title">').text(title),
-                                    $('<ul>').append(
-                                        $('<li class="name">').text(channelId),
-                                        $('<li class="view">').text(vid_id),
-                                        $('<li class="late">').text(date),
-                                    ),
-                                    $('<button class="moreBtn">').append(
-                                        $('<i class="fas fa-ellipsis-v" aria-hidden="true">')
-                                    )
+                        $('<div class="video">').append("<img src='" + thumb + "'/>"),
+                        $('<div class="info">').append(
+                            $('<div class="avatar">').append('<img src="img/avatar.jpg" alt="avatar">'),
+                            $('<div class="titleBtn">').append(
+                                $('<div class="title">').text(title),
+                                $('<ul>').append(
+                                    $('<li class="name">').text(channelId),
+                                    $('<li class="view">').text(vid_id),
+                                    $('<li class="late">').text(date),
+                                ),
+                                $('<button class="moreBtn">').append(
+                                    $('<i class="fas fa-ellipsis-v" aria-hidden="true">')
                                 )
                             )
+                        )
                     )
                 )
             );                
