@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>YOUTUBE MOBILE</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <script src="/js/jquery-1.8.3.min.js"></script>
-    <script src="/js/jquery.easing.1.3.js"></script>
-    <script src="/js/custom.min.js"></script>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/custom.min.js"></script>
     <script src="https://kit.fontawesome.com/cc918a0d21.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -31,7 +31,7 @@
             <div class="center">
                 <form class="searchForm">
                     <div class="formWrap">
-                        <input type="search" name="search" id="search" placeholder="Search">
+                        <input type="text" name="search" id="search01" placeholder="Search">
                         <a href="#" class="keyboardBtn"><i class="fas fa-keyboard"></i></a>
                     </div>
                     <button class="searchBtn" type="submit" data-tooltip-text="검색"><i class="fas fa-search" aria-hidden="true"></i></button>
@@ -71,6 +71,35 @@
         </ul>
     </div>
     <!-- menuList : e -->
+    
+    <!-- 검색창 : s -->
+    <div id="searchLayout">
+        <div class="wrap">
+            <button class="backBtn"><i class="fas fa-arrow-left"></i></button>
+            <div class="searchBox">
+                <input type="text" name="search" id="searcc02" placeholder="Youtube 검색">
+                <button class="searchBtn" type="submit"><i class="fas fa-search" aria-hidden="true"></i></button>
+            </div>
+        </div>
+    </div>
+    <!-- 검색창 : e -->
+
+    <!-- 설정창 : s -->
+    <div id="settingLayout">
+        <div class="wrap">
+            <ul>
+                <li><a href="#">설정</a></li>
+                <li><a href="#">재생설정</a></li>
+                <li><a href="#">Youtube의 내 데이터</a></li>
+                <li><a href="#">의견 보내기</a></li>
+                <li><a href="#">도움말</a></li>
+                <li><a href="#">데스크톱</a></li>
+                <li><a href="#">취소</a></li>
+            </ul>
+        </div>
+    </div>
+
+
 
 
 
