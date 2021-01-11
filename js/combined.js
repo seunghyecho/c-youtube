@@ -34,7 +34,6 @@ $(function(){
             data : options      
         })
         .success(function(data){
-            console.log(data);
             create_list(data);
         })
         .error(function(){
@@ -138,9 +137,6 @@ $(function(){
 
     
 });
-$(document).ready(function(){
-    console.log('sub community');
-})
 $(function(){
     console.log('main intro');
 
@@ -232,3 +228,6 @@ $(function(){
 
 
 });
+$(document).ready(function(){
+    console.log('sub community');
+})

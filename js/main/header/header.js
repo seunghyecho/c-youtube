@@ -31,7 +31,6 @@ $(function(){
             data : options      
         })
         .success(function(data){
-            console.log(data);
             create_list(data);
         })
         .error(function(){
