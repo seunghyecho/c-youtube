@@ -9,19 +9,18 @@ $(function(){
     var $metaDescription = $('.meta_description');
     var $metaWrap = $('.meta_description > .wrap');
     var $btnClose = $metaDescription.children('.top').find('button');
-   
-
-    // $metaDescription.css({'height' : (windowHt - videoHt)+'px'});
-    // console.log($metaDescription.innerHeight());
-    // $metaWrap.css({'height' : (windowHt - videoHt)+'px'});
 
 
-    $(window).resize(function(){
+    function resizeHandler(){
         var videoHt = $video.innerHeight();
         var windowHt = $(window).innerHeight();
         $metaDescription.css({'height' : (windowHt - videoHt)+'px'});
         console.log(videoHt, $metaDescription.innerHeight());
+    };
+    $(window).resize(function(){
+        resizeHandler()
     });
+    resizeHandler();
 
 
     $metaDescription.fadeOut();
