@@ -126,10 +126,17 @@
                           
                             .avatar{
                                 margin-right: 10px;
-                                width: var(--avatar-size);
-                                height: var(--avatar-size);
-                                border-radius: 50%;
                                 overflow: hidden;
+
+                                &::after{
+                                    content: "";
+                                    display: block;
+                                    width: var(--avatar-size);
+                                    height: var(--avatar-size);
+                                    border-radius: 50%;
+                                    background-image: url(/img/avatar.jpg);
+                                    background-size: 100%;
+                                }
                             }
                             .info{
                                 display: flex;
@@ -157,11 +164,7 @@
                 }
                 // upNext
                 .upNext{
-                    .info{
-                        .avatar{
-                            display: none;
-                        }
-                    }
+                   
                     &.on{
                         margin-top: 12px;
                         padding: 0 var(--padding);
@@ -174,14 +177,18 @@
         
                             .avatar{
                                 margin-right: 10px;
-                                display: inline-block;
-                                width: var(--avatar-size);
-                                height: var(--avatar-size);
-                                border-radius: 50%;
                                 overflow: hidden;
+
+                                &::after{
+                                    content: "";
+                                    display:  inline-block;
+                                    width: var(--avatar-size);
+                                    height: var(--avatar-size);
+                                    border-radius: 50%;
+                                    background-image: url(/img/avatar.jpg);
+                                    background-size: 100%;
+                                }
                             }
-        
-                            
                         }
 
                         .titleBtn{

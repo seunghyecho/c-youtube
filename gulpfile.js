@@ -13,7 +13,7 @@ const browserSync = require('browser-sync').create();
 const sourcemaps = require('gulp-sourcemaps');
 const include = require('gulp-html-tag-include');
 const concat = require('gulp-concat');
-const uglify = require('gulp-uglify');
+// const uglify = require('gulp-uglify');
 const rename = require('gulp-rename');
 
 
@@ -49,7 +49,6 @@ function js_combine(){
       .pipe(gulp.dest('./js'))
       .pipe(concat('combined.js'))
       .pipe(gulp.dest('./js'))
-      .pipe(uglify())
       .pipe(rename('custom.min.js'))
       .pipe(gulp.dest('./js'))
 }

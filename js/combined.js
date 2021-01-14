@@ -24,64 +24,84 @@ $(function(){
         key: key,
         maxResults: 10,
         playlistId: playlistId
-    }
+    };
 
     //youtube 데이터 호출
-    function load_youtube(){
+    function loadYoutube(){
         $.ajax({
             url : URL,
             dataType : 'jsonp',
             data : options      
         })
         .success(function(data){
-            create_list(data);
+            createList(data);
+            console.log(data)
         })
         .error(function(){
             alert('Fail to load Youtube data!!');
         })
-    }
+    };
+
+    function createList(data) {
+        let html = '';
+        data.items.forEach(function(item, index){
+          html += createItemHTML(item.snippet);
+        });
+        document.querySelector('.items').innerHTML = html;
+      };
+      
+
+    function createItemHTML({ 
+        thumbnails: { medium: {url} }, 
+        description, 
+        channelTitle, 
+        publishedAt, 
+        resourceId: { kind } 
+    }){
+        return `<li class="item"><a href="#"><div class="video"><img src="${url}"></div><div class="info"><div class="avatar"></div><div class="titleBtn"><div class="title">${description}</div><ul><li class="name">${channelTitle}</li><li class="view">${kind}</li><li class="late">${publishedAt.substring(0,10)}</li></ul><button class="moreBtn"><i class="fas fa-ellipsis-v" aria-hidden="true"></i></button></div></div></a></li>`;
+      };
+      
+
+
     
-     //유튜브 목록 생성
-    function create_list(data){
+    //유튜브 목록 생성
+    // function create_list(data){
 
-        $(data.items).each(function(index, item){
-            var thumb = item.snippet.thumbnails.medium.url;
-            var title = item.snippet.title;
-            var channelId = item.snippet.channelId;
-            var vid_id = item.snippet.resourceId.videoId;
-            var date = item.snippet.publishedAt.substring(0,10);
-            var result = '';
+    //     $(data.items).each(function(index, item){
+    //         var thumb = item.snippet.thumbnails.medium.url;
+    //         var title = item.snippet.title;
+    //         var channelId = item.snippet.channelId;
+    //         var vid_id = item.snippet.resourceId.videoId;
+    //         var date = item.snippet.publishedAt.substring(0,10);
+    //         var result = '';
 
-            $(".upNext ul.items").append(
-                $('<li class="item">').append(
-                    $('<a href="#">').append(
-                        $('<div class="video">').append("<img src='" + thumb + "'/>"),
-                        $('<div class="info">').append(
-                            $('<div class="avatar">').append('<img src="img/avatar.jpg" alt="avatar">'),
-                            $('<div class="titleBtn">').append(
-                                $('<div class="title">').text(title),
-                                $('<ul>').append(
-                                    $('<li class="name">').text(channelId),
-                                    $('<li class="view">').text(vid_id),
-                                    $('<li class="late">').text(date),
-                                ),
-                                $('<button class="moreBtn">').append(
-                                    $('<i class="fas fa-ellipsis-v" aria-hidden="true">')
-                                )
-                            )
-                        )
-                    )
-                )
-            );                
-            
-            
-       
-        })
-    }
+    //         $(".upNext ul.items").append(
+    //             $('<li class="item">').append(
+    //                 $('<a href="#">').append(
+    //                     $('<div class="video">').append("<img src='" + thumb + "'/>"),
+    //                     $('<div class="info">').append(
+    //                         $('<div class="avatar">').append('<img src="img/avatar.jpg" alt="avatar">'),
+    //                         $('<div class="titleBtn">').append(
+    //                             $('<div class="title">').text(title),
+    //                             $('<ul>').append(
+    //                                 $('<li class="name">').text(channelId),
+    //                                 $('<li class="view">').text(vid_id),
+    //                                 $('<li class="late">').text(date),
+    //                             ),
+    //                             $('<button class="moreBtn">').append(
+    //                                 $('<i class="fas fa-ellipsis-v" aria-hidden="true">')
+    //                             )
+    //                         )
+    //                     )
+    //                 )
+    //             )
+    //         );                
+    //     })
+    // }
 
     $searchBtn.on('click', function(){
         $searchLayout.hide();
-        load_youtube();
+        loadYoutube();
         $upNext.addClass('on');
     });
 
@@ -137,6 +157,9 @@ $(function(){
 
     
 });
+$(document).ready(function(){
+    console.log('sub community');
+})
 $(function(){
     console.log('main intro');
 
@@ -228,6 +251,3 @@ $(function(){
 
 
 });
-$(document).ready(function(){
-    console.log('sub community');
-})
